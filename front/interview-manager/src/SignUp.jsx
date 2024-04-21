@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 const SignUpForm = () => {
+  const [name, setName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -12,7 +14,7 @@ const SignUpForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: { name, phoneNumber, email, password },
       });
 
       if (!response.ok) {
@@ -34,6 +36,18 @@ const SignUpForm = () => {
     <div>
       <h2>Sign Up</h2>
       {error && <p>{error}</p>}
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        value={phoneNumber}
+        onChange={(e) => setPhoneNumber(e.target.value)}
+      />
       <input
         type="email"
         placeholder="Email"
