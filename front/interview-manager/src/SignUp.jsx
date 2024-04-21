@@ -9,13 +9,13 @@ const SignUpForm = () => {
 
   const handleSignUp = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/users/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: { name, phoneNumber, email, password },
-      });
+        const response = await fetch('http://localhost:4000/api/users/signup', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, phoneNumber, email, password }),
+          });
 
       if (!response.ok) {
         const errorData = await response.json();

@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 // import Queue from  './Queue'
 import SignUpForm from './SignUp'
+import LoginForm from './LogIn'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +13,8 @@ function App() {
     <>
       <div>
         {/* <Queue /> */}
-        <SignUpForm/>
+        {/* <SignUpForm/> */}
+        <LoginForm />
       </div>
     </>
   )
