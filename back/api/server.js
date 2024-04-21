@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import { User } from '../models/User.js';
 import CryptoJS from 'crypto-js';
 import jwt from 'jsonwebtoken';
+import cors from 'cors';
+
 
 const app = express();
 const port = 4000;
@@ -11,6 +13,8 @@ const port = 4000;
 export async function startServer(secret) {
 
     app.use(express.json());
+    app.use(cors());
+
 
     app.use((req, res, next) => {
         console.log('Request received:', req.method, req.url);
@@ -54,11 +58,9 @@ export async function startServer(secret) {
             }
 
 
-            // Generate JWT token
             const token = jwt.sign({ userId: user._id }, secret, { expiresIn: '1h' });
 
-            // Set the token as a cookie
-            res.cookie('token', token, { httpOnly: true, maxAge: 3600000 }); // Max age in milliseconds (1 hour)
+            res.cookie('token', token, { httpOnly: true, maxAge: 3600000 }); 
 
     
             res.status(200).json({ message: 'Login successful' });
