@@ -30,14 +30,13 @@ const FormPage = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Join Meeting Room</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-grid">
-          <div className="label-input">
+    <div className="form-container pt-[130px] flex-col justify-center">
+      <h2 className='text-[32px]'>Join Meeting Room</h2> <br />
+      <form onSubmit={handleSubmit} className='w-[100%]'>
+        <div className="ml-[300px]">
+          <div className="label-input w-[600px]">
             <label htmlFor="field1">First Name:</label>
-            <input
-              className='textbox'
+            <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
               type="text"
               id="field1"
               name="field1"
@@ -47,10 +46,10 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="label-input">
+          <div className="label-input w-[600px]">
             <label htmlFor="field2">Last Name:</label>
-            <input
-              className='textbox'
+            <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
+
               type="text"
               id="field2"
               name="field2"
@@ -60,10 +59,10 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="label-input">
+          <div className="label-input w-[600px]">
             <label htmlFor="field3">Email Address:</label>
-            <input
-              className='textbox'
+            <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
+
               type="text"
               id="field3"
               name="field3"
@@ -73,10 +72,10 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="label-input">
+          <div className="label-input w-[600px]">
             <label htmlFor="field4">Meeting Room ID/URL:</label>
-            <input
-              className='textbox'
+           <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
+
               type="text"
               id="field4"
               name="field4"
@@ -86,9 +85,10 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="label-input">
+          <div className="label-input w-[600px]">
             <label htmlFor="image1">Upload Your CV:</label>
-            <input
+            <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
+
               type="file"
               id="image1"
               name="image1"
@@ -97,9 +97,9 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="label-input">
+          <div className="label-input w-[600px]">
             <label htmlFor="image2">Upload Proof of Identification(Driving Licence/ NIC):</label>
-            <input
+            <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
               type="file"
               id="image2"
               name="image2"
@@ -109,7 +109,7 @@ const FormPage = () => {
             />
           </div>
         </div>
-        <button type="submit">Submit</button>
+        <button className='text-white w-[100px]' type="submit">Submit</button>
       </form>
     </div>
   );

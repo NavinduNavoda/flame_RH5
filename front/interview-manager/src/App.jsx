@@ -6,6 +6,7 @@ import QueuePage from './QueuePage'
 import Home from "./Components/Home";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
+import FormPage from './FormPage';
 
 import { useState } from 'react';
 
@@ -17,10 +18,10 @@ function App() {
     <>
       <div>
         <Navbar setPage = {setPage}/>
-
         {page == 'home' && <Home  setPage = {setPage}/>}
         {page == 'queue' && <QueuePage />}
-        {page == 'signup' && <SignUpForm />}
+        {page == 'joinroom' && <FormPage />}
+        {page == 'signup' && <SignUpForm setPage = {setPage}/>}
         {page == 'login' && <LoginForm />}
         
         <Footer />

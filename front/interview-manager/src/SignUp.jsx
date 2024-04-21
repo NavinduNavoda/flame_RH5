@@ -7,7 +7,7 @@ const SignUpForm = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSignUp = async () => {
+  const handleSignUp = async (props) => {
     try {
         const response = await fetch('http://localhost:4000/api/users/signup', {
             method: 'POST',
@@ -27,6 +27,7 @@ const SignUpForm = () => {
 
       // Handle successful signup
       console.log('Signup successful');
+      props.setPage('home');
       // You can redirect to another page or perform any other action here
     } catch (error) {
       console.error('Error signing up:', error);
@@ -35,7 +36,8 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className='pt-[200px] flex-col'>
+    <div className='flex items-center justify-center'>
+    <div className='pt-[200px] flex-col w-[300px]'>
       <h2 className='mb-[20px] text-[32px] font-semibold'>Sign Up</h2>
       {error && <p>{error}</p>}
       <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
@@ -73,6 +75,7 @@ const SignUpForm = () => {
       <br />
 
       <button className='text-white'  onClick={handleSignUp}>Sign Up</button>
+    </div>
     </div>
   );
 };

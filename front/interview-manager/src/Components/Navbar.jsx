@@ -12,6 +12,9 @@ const Navbar = (props) => {
           <li onClick={()=>{props.setPage("queue")}}>
               Queue
           </li>
+          <li onClick={()=>{props.setPage("joinroom")}}>
+              Join Room
+          </li>
           <li onClick={()=>{props.setPage("signup")}}>
               Signup
           </li>
