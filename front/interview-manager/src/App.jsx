@@ -1,15 +1,19 @@
 
 import './App.css'
-// import Queue from  './Queue'
 import SignUpForm from './SignUp'
 import LoginForm from './LogIn'
+import QueuePage from './QueuePage'
+import Home from "./Components/Home";
+import Footer from "./Components/Footer";
 
 function App() {
 
   return (
     <>
       <div>
-        {/* <Queue /> */}
+        <Home />
+        <Footer />
+        <QueuePage />
         <SignUpForm/>
         <LoginForm />
       </div>
