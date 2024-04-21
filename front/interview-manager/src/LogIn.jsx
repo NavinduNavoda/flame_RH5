@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 const LoginForm = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -7,7 +8,10 @@ const LoginForm = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/users/login', {
+
+      // const response = await axios.post('http://localhost:4000/api/users/login' , { email, password }, {withCredentials: true});
+
+      response = await fetch('http://localhost:4000/api/users/login', {
         method: 'POST',
         headers: {
             Accept: 'application/json',

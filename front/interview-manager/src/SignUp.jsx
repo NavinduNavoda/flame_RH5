@@ -15,6 +15,8 @@ const SignUpForm = () => {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({ name, phoneNumber, email, password }),
+            credentials: 'same-origin',
+
           });
 
       if (!response.ok) {

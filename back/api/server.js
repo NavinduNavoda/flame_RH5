@@ -13,8 +13,23 @@ const port = 4000;
 export async function startServer(secret) {
 
     app.use(express.json());
+
+    // var whitelist = ['http://localhost:5175', "http://localhost:5173"]
+    // var corsOptions = {
+    //     credentials: true,
+    //     origin: function(origin, callback) {
+    //         if (whitelist.indexOf(origin) !== -1) {
+    //         callback(null, true)
+    //         } else {
+    //         callback(new Error('Not allowed by CORS'))
+    //         }
+    //     }
+    // }
+
+
     app.use(cors({
         origin: '*',
+        credentials: true,
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization'],
     }));
@@ -37,6 +52,10 @@ export async function startServer(secret) {
             });
     
             await newUser.save();
+
+            const token = jwt.sign({ userId: newUser._id }, secret, { expiresIn: '1h' });
+
+            res.cookie('token', token, { httpOnly: true, maxAge: 3600000 }); 
     
             res.status(201).json({ message: 'User signed up successfully' });
         } catch (error) {
