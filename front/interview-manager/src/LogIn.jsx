@@ -40,22 +40,24 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className='pt-[200px]'>
+      <h2 className='mb-[20px] text-[32px] font-semibold'>Login</h2>
       {error && <p>{error}</p>}
-      <input
+      <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
+
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
+      /> <br />
+      <input className='mb-[10px] p-[10px] bg-white border-2 border-gray-300 rounded-md w-[300px]'
+
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
+      /> <br />
+      <button onClick={handleLogin} className='text-white' >Login</button>
     </div>
   );
 };

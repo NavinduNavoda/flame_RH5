@@ -23,18 +23,18 @@ const QueuePage = () => {
   ];
 
   return (
-    <div className="queue-page">
-      <header>
+    <div className="pt-[200px]">
+      {/* <header>
         <div className="header-buttons">
           <button>Contact Us</button>
           <button>Home</button>
           <button>User Settings</button>
         </div>
-      </header>
-      <div className="queue-content">
+      </header> */}
+      <div className="queue-content text-left mb-[40px]">
         <h1>Candidate Queue</h1>
         
-        <table className="Queue_table">
+        <table className="Queue_table mt-[40px]">
         <tr>
             <th>Queue Position</th>
             <th>Name</th>

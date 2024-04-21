@@ -1,29 +1,33 @@
 import React from "react";
 import BannerBackground from "../Assets/home-page.png";
+import Footer from "./Footer";
 
-import Navbar from "./Navbar";
 // import { FiArrowRight } from "react-icons/fi";
 
-const Home = () => {
+var sectionStyle = {
+  backgroundImage: "url(" + "home-page.png" + ")",
+  
+};
+
+const Home = (props) => {
   return (
     <div className="home-container" >
-      <Navbar />
-      <div class="home-background"></div>
-      <div className="home-banner-container ">
-        <div className="home-text-section">
-          <h1 className="primary-heading">
-            Find<br/>Your Fashion
+      <div class="absolute top-0 left-0 w-[100%] h-[90vh] bg-cover" style={sectionStyle}></div>
+      <div className={`home-banner-container z-30 relative`}>
+        <div className="home-text-section pt-[200px]">
+          <h1 className="text-left text-[62px]">
+            Find<br/>Your Passion
           </h1>
-          <p className="primary-text">
+          <p className="text-left text-[16px] tracking-wide">
           What ever happened ,it doesn't matter. Find your path.
           </p>
           <div className="home-button">
-            <a href="" className="secondary-button">
+            <li  className="secondary-button" onClick={()=>{props.setPage('signup')}}>
               Start Meeting
-            </a>
-            <a href="" className="secondary-button-signup">
+            </li>
+            <li className="secondary-button-signup" onClick={()=>{props.setPage('signup')}}>
               SIGN UP 
-            </a>
+            </li>
           </div>
           
           

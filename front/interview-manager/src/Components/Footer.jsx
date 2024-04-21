@@ -10,12 +10,12 @@ const Footer = () => {
     <div className="footer-wrapper">
       <div className="footer-section-one">
         <div className="footer-logo-container">
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+        Streamline candidate assessment with structured interviews, score tracking, and feedback collection. Optimize hiring decisions.
         </div>
         <div className="footer-icons">
-          <a className="footer-list" href="">My Learning</a>
+          {/* <a className="footer-list" href=""></a> */}
           <a className="footer-list"href="">Community</a>
-          <a className="footer-list" href="">Friends</a>
+          {/* <a className="footer-list" href="">Friends</a> */}
           <a className="footer-list" href="">Contact us </a>
         </div>
       </div>
