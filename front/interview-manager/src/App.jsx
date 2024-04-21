@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Queue from './Queue'
+// import Queue from  './Queue'
+import SignUpForm from './SignUp'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,8 @@ function App() {
   return (
     <>
       <div>
-        <Queue />
+        {/* <Queue /> */}
+        <SignUpForm/>
       </div>
     </>
   )
